@@ -109,29 +109,40 @@ body{
 }
 
 .typewriter-name{
-    margin:15em auto 15em;
-    /* display: flex; */
-    
-    justify-content: space-around;
+    margin:10em auto 10em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.typewriter-name-block{
+    margin-right:1rem;
 }
 .typewriter-name img{
-    position: absolute;
+    position: relative;
     border-radius: 20px;
     z-index: -1;
-    right:24rem;
+    /* right:24rem; */
     height:20rem;
     width:18rem;
-    top:10rem;
-    animation-fill-mode: forwards;
-    animation: fade 3s ease-out 1s 1,
-        translate 2s ease-out 1s 1; 
+    opacity:0;
+    /* top:10rem; */
+    /* animation-fill-mode: ; */
+    animation: fade 3s ease-out 1s 1 forwards,
+        translate 2s ease-out 1s 1 forwards; 
 }
 
-.typewriter-name h1{
-    margin: 0 25rem;
+.typewriter-container{
+    background-color: transparent;
     position:relative;
     z-index: 1;
-    display: inline-block;
+    width:25rem;
+}
+
+.typewriter-container h1{
+    /* margin: 0 25rem; */
+    position:relative;
+    z-index: 1;
+    /* display: inline-block; */
     font-size:3rem;
     width:fit-content;
     /* height:3rem; */
@@ -149,6 +160,18 @@ body{
       blink-caret .75s step-end 1s infinite;
       
   }
+  .typewriter-container p{
+    position:relative;
+    width:fit-content;
+    background-color: transparent;
+    z-index: 1;
+    text-align:center;
+    font-size:1.5rem;
+    transform: translateX(4rem);
+    animation-fill-mode: forwards;
+    animation: appear 2s ease-out 1 4s forwards; 
+    opacity:0;
+  }
   
   /* .my-img{
     height:10rem;
@@ -156,6 +179,7 @@ body{
   } */
 
   /* The typing effect */
+
   @keyframes typing {
     from { width: 0 }
     to { width: 21rem; }
@@ -180,6 +204,15 @@ body{
         transform:translateX(10rem);
     }to{
         transform:translateX(0);
+    }
+  }
+
+  @keyframes appear{
+    from{
+        opacity:0
+    }to{
+        opacity:1;
+        /* box-shadow: 0 0 10px 2px gray; */
     }
   }
   /* Google Fonts */
