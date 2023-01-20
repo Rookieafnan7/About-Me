@@ -10,11 +10,12 @@ body{
     margin:0;
 }
 
+
+/* NAVBAR */
+
 .navbar{
     display:flex;
-    /* width:100%; */
     border-bottom: 3px solid gray;
-    /* background-image: url("img/patternpad.svg"); */
     color:white;
     background-color: #13005A;
     justify-content: space-between;
@@ -24,7 +25,6 @@ body{
 }
 
 .nav{
-    
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -46,8 +46,6 @@ body{
 }
 
 .nav-brand{
-    /* background-image: url("img/blob.svg"); */
-     /* background-size: 150% 150%;  */
     font-size: 2rem !important;
     position: relative;
     padding: 10px 20px;
@@ -58,44 +56,17 @@ body{
     border: 3px solid transparent;
     border-radius: 0.8rem;
     color: white;
-    
-    /* transition:; */
-    /* left:; */
 }
- /* .nav-img{
-    display: block;
-    position:absolute ;
-     */
-    /* height: inherit;  */
-    /* width:250px;
-    left:60px;
-    top:-100px; */
-    /* top:2px; */
-/* } */
-
-/* .nav-img-1{
-    z-index: -1 !important;
-}
-.nav-img-2{
-    z-index: -2 !important;
-    transform: rotate(-30deg);
-} */ 
-/* .nav-brand::before{
-    content:'';
-    background-image:url("img/squircle.svg");
-    position: relative;
-    height:10px;
-    width:10px;
-} */
 
 .nav-btn:hover{
-    border: 3px solid gray;
-    background-color: gray;
-    box-shadow: 0 0 30px 8px gray;
-    background-color: gray!important;
-    /* opacity: 0.4; */
-    color:white;
-    /* opacity: 0.7; */
+    animation: btn 1s ease-in-out 1;
+    transition: background-color 1s ease-in-out;
+    background-color: #8EA7E9 !important;
+    animation-fill-mode: forwards;
+}
+.nav-btn::not(:hover){
+  animation: btn 1s ease-in-out 1 reverse;
+  animation-fill-mode:backwards;
 }
 .nav-brand:hover{
     border-radius: 0.8rem !important;
@@ -121,12 +92,9 @@ body{
     position: relative;
     border-radius: 20px;
     z-index: -1;
-    /* right:24rem; */
     height:20rem;
     width:18rem;
     opacity:0;
-    /* top:10rem; */
-    /* animation-fill-mode: ; */
     animation: fade 3s ease-out 1s 1 forwards,
         translate 2s ease-out 1s 1 forwards; 
 }
@@ -139,24 +107,19 @@ body{
 }
 
 .typewriter-container h1{
-    /* margin: 0 25rem; */
     position:relative;
     z-index: 1;
-    /* display: inline-block; */
     font-size:3rem;
     width:fit-content;
-    /* height:3rem; */
-    overflow: hidden; /* Ensures the content is not revealed until the animation */
-    border-right: .10em solid orange; /* The typwriter cursor */
-    white-space: nowrap; /* Keeps the content on a single line */
+    overflow: hidden; 
+    border-right: .10em solid orange; 
+    white-space: nowrap; 
     /* margin: 0 auto; */
      /* Gives that scrolling effect as the typing happens */
-    letter-spacing: .15rem; /* Adjust as needed */
+    letter-spacing: .15rem; 
     position: relative;
-    /* display:block; */
-    /* animation-delay: 2s; */
     animation: 
-      typing 3s steps(14, end) 1s,
+      typing 3s steps(14, end),
       blink-caret .75s step-end 1s infinite;
       
   }
@@ -172,13 +135,64 @@ body{
     animation: appear 2s ease-out 1 4s forwards; 
     opacity:0;
   }
-  
+
+  .content-container{
+    background-color:#8EA7E9;
+    padding:5rem 0;
+  }
+  .content-card{
+    width:65%;
+    margin: 50px auto;
+    border-radius: 1rem;
+    box-shadow: 0 10px 10px 2px white;
+    border: 3px solid #E5E0FF;
+    background-color:white;
+  }
+  .content-header{
+    padding: 2rem 4rem;
+    border-bottom:2px solid white;
+    margin:0 0 ;
+  }
+  .content-div{
+    
+    padding: 2rem 4rem 0;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .content-block-hold{
+    width:80%;
+  }
+  .content-div-content{
+    padding:0.5rem;
+  }
+  .content-div-header{
+    margin: 0 0;
+    border-radius: 0.5rem 0 0 0.5rem;
+  }
+  .content-div-status{
+    width:20%;
+    border-radius: 0 0.5rem 0.5rem 0;
+    padding:1rem;
+    background-color:whitesmoke;
+    height:inherit;
+  }
   /* .my-img{
     height:10rem;
     width:10rem;
   } */
 
   /* The typing effect */
+  @keyframes btn{
+    to{
+      border: 3px solid gray;
+      /* background-color: gray; */
+      box-shadow: 0 0 30px 8px gray;
+      /* background-color: gray !important; */
+      /* opacity: 0.4; */
+      color:black;
+    }
+  }
 
   @keyframes typing {
     from { width: 0 }
@@ -215,44 +229,4 @@ body{
         /* box-shadow: 0 0 10px 2px gray; */
     }
   }
-  /* Google Fonts */
-/* @import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
-
-/* Global */
-/* html{
-  min-height: 100%;
-  overflow: hidden;
-}
-body{
-  height: calc(100vh - 8em);
-  padding: 4em;
-  color: rgba(255,255,255,.75);
-  font-family: 'Anonymous Pro', monospace;  
-  background-color: rgb(25,25,25);  
-}
-.line-1{
-    position: relative;
-    top: 50%;  
-    width: 24em;
-    margin: 0 auto;
-    border-right: 2px solid rgba(255,255,255,.75);
-    font-size: 180%;
-    text-align: center;
-    white-space: nowrap;
-    overflow: hidden;
-    transform: translateY(-50%);    
-}
-
-
-.anim-typewriter{
-  animation: typewriter 4s steps(44) 1s  normal both,
-             blinkTextCursor 500ms steps(44) infinite normal;
-}
-@keyframes typewriter{
-  from{width: 0;}
-  to{width: 24em;}
-}
-@keyframes blinkTextCursor{
-  from{border-right-color: rgba(255,255,255,.75);}
-  to{border-right-color: transparent;}
-} */ 
+ 
