@@ -3,11 +3,16 @@ font-family: 'Kanit', sans-serif;
 font-family: 'Kaushan Script', cursive;
 font-family: 'Lato', sans-serif;
 font-family: 'Montserrat', sans-serif;
+font-family: 'Raleway', sans-serif;
 font-family: 'Sofia Sans', sans-serif; */
 
-
+a{
+  text-decoration: none;
+}
 body{
     margin:0;
+    font-family: 'Raleway', sans-serif;
+    /* box-sizing: border-box; */
 }
 
 
@@ -23,7 +28,7 @@ body{
     padding:5px 2rem;
     position: sticky;
     top:0;
-    z-index: 3;
+    z-index: 100;
 }
 
 .nav{
@@ -33,46 +38,106 @@ body{
 }
 
 .nav-btn{
+    letter-spacing: 0.12rem;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    position: relative;
     background-color: transparent!important;
     display:block;
-    padding:10px;
-    border-radius:1.2rem;
+    /* padding:10px; */
+    /* border-radius:1.2rem; */
     background-color: transparent;
-    font-size: 1.2rem;
-    border: 3px solid blueviolet;
+    font-size: 1.4rem;
+    border-left: 3px solid red;
+    border-right: 3px solid red;
     text-decoration: none !important;
-    color: white;
+    
     box-shadow: inset 0 0 20px 8px #00337C;
     margin:0 10px;
     transition: border 2s ease-in-out,background-color 1s ease-in-out,box-shadow 1s ease-in-out,color 1s ease-in-out,box-shadow 1s ease-in-out;
+    
 }
 
+.nav-anim-content{
+  color: white;
+  padding:0 0.5rem;
+}
+.nav-btn-anim::before,.nav-brand-anim::before{
+  position: relative;
+  margin:0 auto!important;
+  display: block;
+  content:' ';
+  width:0;
+  /* left:0; */
+  /* top:-10px; */
+  transition: width 1s;
+  height:3px;
+}
+.nav-btn-anim::after,.nav-brand-anim::after{
+  position: relative;
+  margin:0 auto!important;
+  display: block;
+  content:' ';
+  width:0;
+  /* left:0; */
+  /* bottom:-10px; */
+  transition: width 1s;
+  height:3px;
+}
+
+.nav-brand-anim::before{
+  background-color: gold;
+}
+.nav-brand-anim::after{
+  background-color: gold;
+}
+ .nav-btn-anim::before{
+  background-color: red;
+} 
+.nav-btn-anim::after{
+  background-color: red;
+}
+
+.nav-btn-anim:hover::before,.nav-brand-anim:hover::before,
+.nav-btn-anim:hover::after,.nav-brand-anim:hover::after{
+  width:100%;
+}
+
+
 .nav-brand{
+    letter-spacing: 0.2rem;
+    font-family: 'Raleway', sans-serif!important;
     font-size: 2rem !important;
     position: relative;
-    padding: 10px 20px;
-    position: relative;
+    padding:0;
+    /* padding: 10px 20px; */
+    /* position: relative; */
     background-color: transparent!important;
     z-index: 1;
     background-repeat: no-repeat;
-    border: 3px solid transparent;
-    border-radius: 0.8rem;
+    border-color: gold;
+    /* border-le: 3px solid transparent; */
+    /* border-radius: 0.8rem; */
+    border-radius:0;
     color: white;
 }
 
+/* .nav-btn.nav-brand::before:hover{
+  background-color: gold, !important;
+} */
+
 .nav-btn:hover{
-    animation: btn 1s ease-in-out 1;
-    transition: background-color 1s ease-in-out;
-    background-color: #8EA7E9 !important;
+    animation: btn 1s ease-in 1;
+    /* transition: background-color 1s ease-in-out; */
+    /* background-color: #8EA7E9 !important; */
     animation-fill-mode: forwards;
 }
 .nav-btn::not(:hover){
   animation: btn 1s ease-in-out 1 reverse;
   animation-fill-mode:backwards;
 }
-.nav-brand:hover{
-    border-radius: 0.8rem !important;
-}
+
 
 .mask{
   -webkit-mask-image: url("img/filename.png");
@@ -82,7 +147,18 @@ body{
 }
 
 .intro-container{
-  margin:10em auto 10em;
+  width:100%;
+  background-image: url("img/pattern_circles.png");
+  background-color: black;
+  /* background-size:400% 400%; */
+  background-position: left;
+  /* background-repeat: no-repeat; */
+  /* background-size: cover; */
+  color: white;
+  padding-top: 10em;
+  padding-bottom: 10em;
+  animation: slide 15s linear alternate infinite;
+  /* background-image: url("img/pattern_circles.png"); */
 }
 .typewriter-name{
     
@@ -96,7 +172,7 @@ body{
 .typewriter-name img{
     position: relative;
     border-radius: 20px;
-    z-index: -1;
+    /* z-index: -1; */
     height:20rem;
     width:18rem;
     opacity:0;
@@ -107,12 +183,17 @@ body{
 .typewriter-container{
     background-color: transparent;
     position:relative;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
     z-index: 1;
     width:24rem;
 }
 
 .typewriter-container h1{
+    font-family: 'Raleway', sans-serif;
     position:relative;
+    margin:0;
     z-index: 1;
     font-size:3rem;
     width:fit-content;
@@ -133,6 +214,7 @@ body{
     width:fit-content;
     background-color: transparent;
     z-index: 1;
+    left: 1rem;
     text-align:center;
     font-size:1.5rem;
     transform: translateX(4rem);
@@ -168,6 +250,7 @@ body{
   }
   .content-block-hold{
     width:80%;
+    padding:2%;
   }
   .content-div-content{
     padding:0.5rem;
@@ -177,6 +260,8 @@ body{
     border-radius: 0.5rem 0 0 0.5rem;
   }
   .content-div-status{
+    /* display: flex; */
+    padding:1%;
     width:20%;
     text-align: center;
     border-radius: 0 0.5rem 0.5rem 0;
@@ -189,15 +274,100 @@ body{
     width:10rem;
   } */
 
+  .about-me-container{
+    
+    padding:5rem 5rem;
+    font-size:20px;
+    line-height: 2.5rem;
+  }
+
+  .about-me-card-container{
+    position:relative;
+  }
+  .about-me-bg-card{
+    position:absolute;
+    background-color: #FF7787;
+    /* padding:2rem 3rem; */
+    border-radius:20px;
+    width:80%;
+    height:120%;
+    z-index: -10;
+    
+    position: absolute;
+    top: 50%;  /* position the top  edge of the element at the middle of the parent */
+    left: 50%; /* position the left edge of the element at the middle of the parent */
+
+    transform: translate(-50%, -50%) rotate(3deg);
+    /* margin:0 auto; */
+    /* padding-bottom:2rem; */
+    
+  }
+  .about-me-card{
+    position: relative;
+    z-index: 10;
+    background-color: #FFD9EB;
+    padding:2rem 3rem;
+    border-radius:20px;
+    width:70%;
+    margin:0 auto;
+  }
+
+  /* .about-me-card:hover{
+    
+    animation: popup 2s ease 1 forwards;
+    
+  } */
+
+  /* .about-me-card:not(:hover){
+    
+    animation: popup ease 2s reverse;
+    
+    animation-fill-mode: forwards;
+  } */
+  .about-me-heading{
+    font-size:32px;
+  }
+
+
+  .popup{
+    animation: popup 2s ease-out 1 forwards;
+  }
+  .popdown{
+    animation:popdown 2s ease-out 1 forwards;
+  }
+  .contact-container{
+    padding-top:1rem;
+  }
+  .contact-icon-array{
+    margin:0 auto;
+    text-align: center;
+  }
+  .contact-icon-array{
+    width:30%;
+    padding:1rem 0.5rem 0.5rem 0.5rem;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .contact-icon-block{
+    color:black;
+    /* margin-right:3rem; */
+    cursor: pointer;
+    text-align: center;
+  }
+  .contact-header{
+    text-align:center;
+  }
+
   /* The typing effect */
   @keyframes btn{
     to{
-      border: 3px solid gray;
+      /* border: 3px solid gray; */
       /* background-color: gray; */
       box-shadow: 0 0 30px 8px gray;
+      /* letter-spacing: 0.2rem; */
       /* background-color: gray !important; */
       /* opacity: 0.4; */
-      color:black;
+      /* color:black; */
     }
   }
 
@@ -217,6 +387,7 @@ body{
         opacity:0
     }to{
         opacity:1;
+        box-shadow: 0 1px 10px 4px gray;
         /* box-shadow: ; */
     }
   }
@@ -236,19 +407,61 @@ body{
         /* box-shadow: 0 0 10px 2px gray; */
     }
   }
- @media only screen and (max-width:690px) {
+
+  @keyframes slide{
+    from{
+      background-position: left;
+    }to{
+      background-position: right;
+    }
+  }
+
+  @keyframes popup{
+    
+    to{
+      transform: translateY(-20px);
+    }
+  }
+
+  @keyframes popdown{
+    from{
+      transform: translateY(-20px);
+    }
+    to{
+      transform: translateY(0px);
+    }
+  }
+
+
+  @media only screen and (max-width:910px){
+    .about-me-bg-card{
+     width:80%; 
+    }
+    .about-me-card{
+      width:80%;
+    }
     .typewriter-name{
       flex-direction: column;
     }
-    .nav{
+    .navbar{
+      justify-content: center;
+    }
+    .nav-brand{
       display: none;
     }
+    .nav-anim-content{
+      letter-spacing: 0.1rem;
+    }
+  }
+
+ @media only screen and (max-width:690px) {
+    
     .typewriter-name-block{
       margin-right:0;
       margin-left:1rem;
   }
   .typewriter-container p{
-    margin-left:1.5rem;
+    margin-right:1.5rem;
   }
 
   .content-container{
@@ -264,7 +477,8 @@ body{
   .content-div-status{
     width:100%;
     border-radius: 0 0 0.5rem 0.5rem ;
-    padding:1rem 0;
+    padding:1rem 0.5rem;
+    text-align: center;
   }
   .content-block-hold{
     width:100%;
@@ -272,7 +486,14 @@ body{
   .content-header{
     padding:1rem 2rem;
   }
-  .intro-container{
+  /* .intro-container{
     margin:3em auto 3em;
+  } */
+  .about-me-bg-card{
+    display: none;
+  }
+  .about-me-card{
+    width:90%;
+    animation: none;
   }
  }
