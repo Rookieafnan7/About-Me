@@ -14,3 +14,21 @@ aboutMeCard.addEventListener('mouseout',(event)=>{
     }
 });
 
+const autoplay = '[class|="width"]';
+
+const widthArray = document.querySelectorAll('.skill-div-bar');
+ console.log("hello",widthArray);
+
+widthArray.forEach((element)=>{
+    // console.log("working")
+    let classes = element.classList;
+    console.log(classes);
+    classes.forEach((name)=>{
+        if(name.startsWith("width-")){
+            let strNum = name.substring(6)+"%";
+            // console.log(strNum)
+            element.style.width = strNum;
+        }
+    });
+})
+

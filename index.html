@@ -53,6 +53,26 @@
             </div>
     </div>
 
+    <div class="skills-container">
+        <div class="skills-card">
+            <div class="skills-header">
+                <h2>Here are some of the skills i've learnt!</h2>
+            </div>
+            <div class="skills-bar-container">
+                <div class="skill-div">
+                    <div class="skill-div-header">
+                        <div class="skill-div-header-name">HTML</div>
+                        <div class="skill-div-header-percentage">80%</div>
+                    </div>
+                    <div class="skill-div-bar-container">
+                        <div class="width-80 skill-div-bar">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="content-container" id="education">
         <div class="content-card">
             <h1 class="content-header">
@@ -93,6 +113,21 @@
     </div> -->
     <!-- <p class="line-1 anim-typewriter">Animation typewriter style using css steps()</p> -->
     <script src="index.js"></script>
+    <!-- <script>
+        const widthArray = document.querySelectorAll('[class|="width"');
+        console.log(widthArray);
+        widthArray.forEach((element)=>{
+        console.log("working")
+        let classes = element.classList;
+        classes.forEach((name)=>{
+            if(name.startsWith("width-")){
+                let strNum = name.substring(6) + "%";
+                console.log(strNum);
+                element.style.width = strNum; 
+            }
+        });
+})
+    </script> -->
     
 </body>
 </html>
