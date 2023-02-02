@@ -35,7 +35,12 @@ body{
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    visibility: visible;
 }
+
+  .menu{
+   display: none; 
+  }
 
 .nav-btn{
     letter-spacing: 0.12rem;
@@ -305,11 +310,13 @@ body{
   .about-me-card{
     position: relative;
     z-index: 10;
-    background-color: #FFD9EB;
+    background: rgb(255,255,255);
+    background: linear-gradient(242deg, rgba(255,255,255,0.5859593837535014) 0%, rgba(255,222,225,1) 100%);
     padding:2rem 3rem;
     border-radius:20px;
     width:70%;
     margin:0 auto;
+    
   }
 
   /* .about-me-card:hover{
@@ -328,24 +335,76 @@ body{
     font-size:32px;
   }
 
+  .skills-container{
+    padding: 2rem 0;
+    position: relative;
+    background: rgb(152,238,255);
+    background: linear-gradient(32deg, rgba(152,238,255,0.7876400560224089) 0%, rgba(235,248,250,1) 86%);
+  }
+  /* .skills-top-bg-img,.skills-bottom-bg-img{
+    position: absolute;
+    min-height:10rem;
+    width: 100%;
+    z-index: -100;
+    
+    background-repeat: no-repeat;
+    background-size: stretch;
+  }
+  .skills-top-bg-img{
+    top:0;
+    background-image: url("img/skills-img-top.svg");
+    
+  }
+  .skills-bottom-bg-img{
+    bottom: 0;
+    background-image: url("img/skills-img-bottom.svg");
+  } */
 
   .skills-card{
-    height: 10rem;
-    width:80%;
+    color: white;
+    background-image: url("img/skills.svg");
+    padding:3rem 3rem 3rem 3rem;
+    z-index: 10;
+    position: relative;
+    /* height: 10rem; */
+    width:70%;
     border-radius: 20px;
-    margin:2rem auto;
+    margin:0 auto;
     display: flex;
+    justify-content: space-between;
+    transition: box-shadow 2s ease-in-out,transform 2s ease-in-out;
+  }
+
+  .skills-card:hover{
+    box-shadow: 0 10px 20px 10px white;
+    transform: translateX(30px);
   }
   .skills-header{
     /* height: inherit; */
-    width: 50%;
-    margin:auto;
+    width: 40%;
+    margin:auto 0;
     text-align: center;
+    padding-bottom: 3rem;
     
   }
+
+  .skills-header h2{
+    margin:auto;
+    font-size:3rem;
+  }
   .skills-bar-container{
-    width:50%;
-    padding:2rem 12rem;
+    color:black;
+    background: rgb(255,255,255);
+    background: linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(255,222,225,1) 100%);
+    
+    width:40%;
+    padding:2rem;
+    border:2px solid gray;
+    border-radius: 20px;
+    /* padding:2rem 12rem; */
+  }
+  .skill-div{
+    padding-bottom:2rem;
   }
   .skill-div-header{
     position: relative;
@@ -496,8 +555,40 @@ body{
     }
   }
 
+
+  @keyframes rotate{
+    from{
+      transform: rotate(0deg);
+    }to{
+      transform: rotate(90deg);
+    }
+  }
+
  @media only screen and (max-width:690px) {
     
+    .nav{
+      position: absolute;
+      top:2rem;
+      background-color: rgba(0, 0, 0,0.9);
+      display: block;
+      width: 100%;
+      visibility: hidden;
+      /* display: none; */
+      flex-direction: column;
+      /* justify-content: center; */
+      align-items: center;
+    }
+    .nav-btn{
+      text-align: center;
+      box-shadow: none;
+      border-radius: 10px;
+      margin:10px auto;
+      width:10rem;
+      border:none;
+    }
+    .menu{
+      display: inline-block;
+    }
     .typewriter-name-block{
       margin-right:0;
       margin-left:1rem;
@@ -528,14 +619,31 @@ body{
   .content-header{
     padding:1rem 2rem;
   }
-  /* .intro-container{
-    margin:3em auto 3em;
-  } */
+  .intro-container{
+    padding-top:8rem;
+    padding-bottom: 8rem;
+  }
   .about-me-bg-card{
     display: none;
   }
   .about-me-card{
-    width:90%;
+    width:80%;
     animation: none;
   }
+  .about-me-content p{
+    font-size: 16px;
+  }
+
+  .skills-card{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .skills-header{
+    width:80%;
+  }
+  .skills-bar-container{
+    width:80%;
+  }
+
  }
