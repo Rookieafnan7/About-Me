@@ -229,7 +229,8 @@ body{
   }
 
   .content-container{
-    background-color:#8EA7E9;
+    background: rgb(197,212,252);
+    background: linear-gradient(124deg, rgba(197,212,252,1) 0%, rgba(255,210,208,1) 100%);
     padding:5rem 0;
   }
   .content-card{
@@ -554,7 +555,7 @@ body{
       letter-spacing: 0.1rem;
     }
   }
-
+  
 
   @keyframes rotate{
     from{
@@ -626,8 +627,12 @@ body{
   .about-me-bg-card{
     display: none;
   }
+  .about-me-container{
+    padding:2rem;
+  }
   .about-me-card{
-    width:80%;
+    width:90%;
+    padding:1rem 1.5rem;
     animation: none;
   }
   .about-me-content p{
@@ -638,12 +643,21 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    transition: none;
   }
+  .skills-card:hover{
+    transform: none;
+    box-shadow: none;
+  }
+
   .skills-header{
     width:80%;
   }
   .skills-bar-container{
     width:80%;
   }
+ }
 
+ .icon-container:hover{
+    color:red;
  }
