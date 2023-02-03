@@ -22,7 +22,7 @@ body{
     display:flex;
     border-bottom: 3px solid gray;
     color:white;
-    background-color: #13005A;
+    background: linear-gradient(90deg, #FC466B 0%, #3F5EFB 100%);
     justify-content: space-between;
     align-items: center;
     padding:5px 2rem;
@@ -118,7 +118,8 @@ body{
     padding:0;
     /* padding: 10px 20px; */
     /* position: relative; */
-    background-color: transparent!important;
+    background-color:#00337C !important;
+    box-shadow: none!important;
     z-index: 1;
     background-repeat: no-repeat;
     border-color: gold;
@@ -229,8 +230,7 @@ body{
   }
 
   .content-container{
-    background: rgb(197,212,252);
-    background: linear-gradient(124deg, rgba(197,212,252,1) 0%, rgba(255,210,208,1) 100%);
+    background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
     padding:5rem 0;
   }
   .content-card{
@@ -312,7 +312,7 @@ body{
     position: relative;
     z-index: 10;
     background: rgb(255,255,255);
-    background: linear-gradient(242deg, rgba(255,255,255,0.5859593837535014) 0%, rgba(255,222,225,1) 100%);
+    background: linear-gradient(242deg, rgb(255,255,255) 0%, rgb(255,222,225) 100%);
     padding:2rem 3rem;
     border-radius:20px;
     width:70%;
@@ -337,10 +337,9 @@ body{
   }
 
   .skills-container{
-    padding: 2rem 0;
+    padding: 8rem 0;
     position: relative;
-    background: rgb(152,238,255);
-    background: linear-gradient(32deg, rgba(152,238,255,0.7876400560224089) 0%, rgba(235,248,250,1) 86%);
+    background: linear-gradient(90deg, #3F5EFB 0%, #FC466B 100%);
   }
   /* .skills-top-bg-img,.skills-bottom-bg-img{
     position: absolute;
@@ -386,6 +385,9 @@ body{
     margin:auto 0;
     text-align: center;
     padding-bottom: 3rem;
+    backdrop-filter: blur(14px);
+    border-radius:18px;
+    padding-top:1rem;
     
   }
 
