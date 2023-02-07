@@ -27,7 +27,11 @@ h1,h2,h3,h4,.navbar{
     display:flex;
     border-bottom: 3px solid gray;
     color:white;
-    background: linear-gradient(90deg, #FC466B 0%, #3F5EFB 100%);
+    background: #C33764;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #1D2671, #C33764);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #1D2671, #C33764); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
     justify-content: space-between;
     align-items: center;
     padding:5px 2rem;
@@ -296,9 +300,22 @@ h1,h2,h3,h4,.navbar{
 
   .about-me-card-container{
     position:relative;
+    transition: all 1s ease;
   }
-  .about-me-bg-card{
-    position:absolute;
+  .about-me-card-container:hover .about-me-card{
+    top:-50px;
+  }
+  .about-me-card-container:hover .about-me-bg-card1{
+    top:calc(50% + 30px);
+    left:calc(50% - 30px);
+  }
+  .about-me-card-container:hover .about-me-bg-card2{
+    top:calc(50% + 10px);
+    left:calc(50% + 10px);
+  }
+  
+  .about-me-bg-card1{
+    position:relative;
     background-color: #FF7787;
     /* padding:2rem 3rem; */
     border-radius:20px;
@@ -311,10 +328,32 @@ h1,h2,h3,h4,.navbar{
     left: 50%; /* position the left edge of the element at the middle of the parent */
 
     transform: translate(-50%, -50%) rotate(3deg);
+    transition: all 1s ease;
     /* margin:0 auto; */
     /* padding-bottom:2rem; */
     
   }
+
+  .about-me-bg-card2{
+    position:relative;
+    background-color: lightblue;
+    /* padding:2rem 3rem; */
+    border-radius:20px;
+    width:80%;
+    height:100%;
+    z-index: 5;
+    
+    position: absolute;
+    top: 50%;  /* position the top  edge of the element at the middle of the parent */
+    left: 50%; /* position the left edge of the element at the middle of the parent */
+
+    transform: translate(-50%, -50%) rotate(-5deg);
+    transition: all 1s ease;
+    /* margin:0 auto; */
+    /* padding-bottom:2rem; */
+    
+  }
+
   .about-me-card{
     position: relative;
     z-index: 10;
@@ -324,14 +363,13 @@ h1,h2,h3,h4,.navbar{
     border-radius:20px;
     width:70%;
     margin:0 auto;
-    
+    top:0;
+    transition: all 1s ease;
   }
 
   /* .about-me-card:hover{
     
-    animation: popup 2s ease 1 forwards;
-    
-  } */
+  }  */
 
   /* .about-me-card:not(:hover){
     
@@ -463,11 +501,25 @@ h1,h2,h3,h4,.navbar{
     justify-content: space-evenly;
   }
   .contact-icon-block{
+    position: relative;
     color:black;
     /* margin-right:3rem; */
     cursor: pointer;
     text-align: center;
   }
+
+  .icon-container{
+    position: relative;
+    
+    transition:color 0.5s ease-in-out;
+    
+  }
+
+  .icon-container:hover{
+    color:red;
+    top:-5px;
+ }
+
   .contact-header{
     text-align:center;
   }
@@ -557,7 +609,7 @@ h1,h2,h3,h4,.navbar{
     .content-header{
       padding: 1.5rem 2rem;
     }
-    .about-me-bg-card{
+    .about-me-bg-card1,.about-me-bg-card2{
      width:80%; 
     }
     .about-me-card{
@@ -587,7 +639,9 @@ h1,h2,h3,h4,.navbar{
   }
 
  @media only screen and (max-width:690px) {
-    
+    .about-me-card{
+      transition: none;
+    }
     .nav{
       position: absolute;
       top:2rem;
@@ -653,17 +707,19 @@ h1,h2,h3,h4,.navbar{
     padding-top:8rem;
     padding-bottom: 8rem;
   }
-  .about-me-bg-card{
+  .about-me-bg-card1,.about-me-bg-card2{
     display: none;
   }
   .about-me-container{
     padding:2rem;
+    transition:none;
   }
   .about-me-card{
     width:90%;
     padding:1rem 1.5rem;
-    animation: none;
+    transition: none;
   }
+  
   .about-me-content p{
     font-size: 16px;
   }
@@ -698,6 +754,4 @@ h1,h2,h3,h4,.navbar{
   }
  }
 
- .icon-container:hover{
-    color:red;
- }
+ 
