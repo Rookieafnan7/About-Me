@@ -310,8 +310,8 @@ h1,h2,h3,h4,.navbar{
     left:calc(50% - 30px);
   }
   .about-me-card-container:hover .about-me-bg-card2{
-    top:calc(50% + 10px);
-    left:calc(50% + 10px);
+    top:calc(50% - 10px);
+    left:calc(51% + 10px);
   }
   
   .about-me-bg-card1{
@@ -339,15 +339,15 @@ h1,h2,h3,h4,.navbar{
     background-color: lightblue;
     /* padding:2rem 3rem; */
     border-radius:20px;
-    width:80%;
-    height:100%;
+    width:75%;
+    height:110%;
     z-index: 5;
     
     position: absolute;
     top: 50%;  /* position the top  edge of the element at the middle of the parent */
-    left: 50%; /* position the left edge of the element at the middle of the parent */
+    left: 51%; /* position the left edge of the element at the middle of the parent */
 
-    transform: translate(-50%, -50%) rotate(-5deg);
+    transform: translate(-50%, -50%) rotate(-3deg);
     transition: all 1s ease;
     /* margin:0 auto; */
     /* padding-bottom:2rem; */
