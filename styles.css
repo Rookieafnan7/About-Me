@@ -642,6 +642,12 @@ h1,h2,h3,h4,.navbar{
     .about-me-card{
       transition: none;
     }
+    .about-me-card-container:hover .about-me-card{
+      top:0;
+    }
+    .about-me-container{
+      transition: none;
+    }
     .nav{
       position: absolute;
       top:2rem;
