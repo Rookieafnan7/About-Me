@@ -686,6 +686,8 @@ h1,h2,h3,h4,.navbar{
     width:80%;
   }
   .content-div{
+    align-items: center;
+    justify-items: center;
     text-align: center;
     padding:1rem 2rem;
     flex-direction: column;
