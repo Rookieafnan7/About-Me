@@ -231,7 +231,7 @@ h1,h2,h3,h4,.navbar{
     letter-spacing: .15rem; 
     position: relative;
     animation: 
-      typing 3s steps(14, end),
+      typing 3s steps(13, end),
       blink-caret .75s step-end 1s infinite;
       
   }
@@ -554,7 +554,7 @@ h1,h2,h3,h4,.navbar{
 
   @keyframes typing {
     from { width: 0 }
-    to { width: 21rem; }
+    to { width: 13ch; }
   }
   
   /* The typewriter cursor effect */
