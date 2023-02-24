@@ -28,12 +28,14 @@ menu.addEventListener("click",()=>{
         console.log("yes");
         menuBtn.classList.toggle("off");
         menuBtn.classList.toggle("on");
-        menuBtn.style.animation = "rotate 0.5s ease-in-out 1 reverse forwards"
+        // menuBtn.style.animation = "rotate 0.5s ease-in-out 1 reverse forwards"
         nav.style.visibility = "hidden";
+        nav.style.opacity = 0;
     }else {
-        menuBtn.style.animation = "rotate 0.5s ease-in-out 1 forwards";
+        // menuBtn.style.animation = "rotate 0.5s ease-in-out 1 forwards";
         console.log("no");
         nav.style.visibility = "visible";
+        nav.style.opacity = 1;
         menuBtn.classList.toggle("on");
         if(menuBtn.classList.contains("off")){
             menuBtn.classList.toggle("off");
